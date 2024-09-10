@@ -1,0 +1,14 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>My Django App</title> 
+    {% load static %}
+</head>
+<body>
+
+    {% block content %}
+    {% endblock content %}
+
+    <script src="{% static 'frontend/dist/bundle.js' %}"></script>
+</body>
+</html>

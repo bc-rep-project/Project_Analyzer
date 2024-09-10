@@ -1,0 +1,16 @@
+{
+  "compilerOptions": { 
+    // ... your compiler options
+    "outDir": "./static/js/", 
+    "module": "commonjs",  
+    "esModuleInterop": true, 
+    // ... your other compiler options 
+  },
+  "include": [
+    "analyzer/analysis_utils/*.ts" // Correct path! 
+  ],
+  "exclude": [ // Optional: if needed to prevent compiling certain files 
+    "node_modules",
+    "**/*.spec.ts"  
+  ]
+}
