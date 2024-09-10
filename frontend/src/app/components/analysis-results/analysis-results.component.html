@@ -1,0 +1,3 @@
+<div *ngIf="isLoading">Loading analysis results...</div>
+<div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+<svg *ngIf="!isLoading && !errorMessage" id="analysisGraph" width="960" height="600"></svg>

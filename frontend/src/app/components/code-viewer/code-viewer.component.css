@@ -1,0 +1,7 @@
+  /* Code Viewer */
+  pre {
+    background-color: #cecaca;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow: auto;
+  }

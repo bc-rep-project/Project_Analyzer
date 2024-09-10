@@ -1,0 +1,14 @@
+<table mat-table [dataSource]="metrics" class="mat-elevation-z8">
+  <ng-container matColumnDef="functionName">
+    <th mat-header-cell *matHeaderCellDef> Function Name </th>
+    <td mat-cell *matCellDef="let element"> {{ element.functionName }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="cyclomaticComplexity">
+    <th mat-header-cell *matHeaderCellDef> Cyclomatic Complexity </th>
+    <td mat-cell *matCellDef="let element"> {{ element.cyclomaticComplexity }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

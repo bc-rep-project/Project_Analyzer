@@ -1,0 +1,18 @@
+<div *ngIf="isLoading" class="loading-message">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner> 
+    Loading {{ language }} analysis...
+  </div>
+  
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}  
+  </div>
+  
+  <!-- 
+    Note: [attr.id]="language + 'Graph'" dynamically creates IDs like
+           "pythonGraph", "javaGraph", etc., based on the language input.
+           You'll need to ensure the IDs match when creating the graphs 
+           in your D3GraphService and in the routing (app.routes.ts). 
+   -->
+  <svg *ngIf="!isLoading && !errorMessage && (analysisData$ | async) as analysisData"
+       [attr.id]="language + 'Graph'" width="960" height="600">
+  </svg> 

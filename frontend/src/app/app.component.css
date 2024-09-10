@@ -1,0 +1,129 @@
+/* frontend/src/app/app.component.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Basic styling for form container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  width: 500px; 
+  margin: 20px auto; 
+  padding: 30px; 
+  border: 1px solid lightgray; 
+  border-radius: 5px;
+  background-color: white; /* White background for the form */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  pointer-events: none; /* Prevent the tooltip from interfering with mouse events */
+}
+  
+/* Style form elements */ 
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+  
+/* Style the button */
+button {
+  background-color: #007bff; /* Example button color */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+  
+button:hover {
+  opacity: 0.8;
+}
+  
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+  .form-container {
+    width: 90%; 
+  } 
+}
+
+/* Styling for the SVG graph container */
+#analysisGraph {
+  background-color: #f5f5f5; /* Light gray background for the graph */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+/* You can add custom styles here if needed */
+pre {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+  overflow: auto;
+}
+
+/* You can add custom styles here if needed */
+table {
+  width: 100%;
+}
+
+/* You can add custom styles here if needed */
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid red;
+  } 
+  
+  .loading-message {
+    font-style: italic;
+    color: gray;
+  }
+  
+  /* D3.js Graph Styling */  
+  .links line {
+    stroke: #999;
+    stroke-opacity: 0.6;
+  } 
+  
+  .nodes circle { 
+    stroke: #fff; 
+    stroke-width: 1.5px;
+  } 
+  
+  .nodes circle:hover { 
+    /* Apply any other hover styles if needed, except for 'r' */ 
+    fill: red; 
+  }

@@ -1,0 +1,27 @@
+.error-message {
+    color: red;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid red;
+  } 
+  
+  .loading-message {
+    font-style: italic;
+    color: gray;
+  }
+  
+  /* D3.js Graph Styling */  
+  .links line {
+    stroke: #999;
+    stroke-opacity: 0.6;
+  } 
+  
+  .nodes circle { 
+    stroke: #fff; 
+    stroke-width: 1.5px;
+  } 
+  
+  .nodes circle:hover { 
+    /* Apply any other hover styles if needed, except for 'r' */ 
+    fill: red; 
+  } 

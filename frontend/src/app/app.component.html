@@ -1,0 +1,73 @@
+<div class="container">
+  <mat-progress-spinner *ngIf="isLoading" mode="indeterminate"></mat-progress-spinner>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <app-repository-input (analyzeRepo)="onAnalyzeRepo($event)"></app-repository-input>
+
+  <div *ngIf="analysisResults">
+    <h2>Analysis Results</h2>
+
+    <app-language-selector (languageSelected)="onLanguageSelected($event)"></app-language-selector>
+
+    <app-complexity-summary 
+      *ngIf="selectedLanguage === 'All Languages'" 
+      [languageAnalyses]="languageAnalyses">
+    </app-complexity-summary>
+
+    <div *ngIf="selectedLanguage !== 'All Languages'">
+      <svg [attr.id]="selectedLanguage + 'Graph'" width="960" height="600"></svg>
+
+      <app-complexity-metrics
+        *ngIf="selectedLanguageAnalysis"
+        [metrics]="selectedLanguageAnalysis.nodes">
+      </app-complexity-metrics>
+
+      <app-code-viewer [code]="selectedCode" [language]="selectedLanguage"></app-code-viewer>
+    </div>
+  </div>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+</div>
+
+
+<!-- <div class="container">
+  <mat-progress-spinner *ngIf="isLoading" mode="indeterminate"></mat-progress-spinner>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <app-repository-input (analyzeRepo)="onAnalyzeRepo($event)"></app-repository-input>
+
+  <app-analysis-results *ngIf="analysisId" [analysisId]="analysisId"></app-analysis-results>
+
+  <svg *ngIf="analysisId && selectedLanguage"
+       [attr.id]="selectedLanguage + 'Graph'"
+       width="960"
+       height="600"></svg>
+
+  <app-language-selector (languageSelected)="onLanguageSelected($event)"></app-language-selector>
+
+  <app-complexity-metrics [metrics]="complexityMetrics"></app-complexity-metrics>
+
+  <app-code-viewer [code]="selectedCode" [language]="selectedLanguage"></app-code-viewer>
+</div> -->
+
+
+<!-- <div class="container">
+    <mat-progress-spinner *ngIf="isLoading" mode="indeterminate"></mat-progress-spinner>
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    
+    <app-repository-input (analyzeRepo)="onAnalyzeRepo($event)"></app-repository-input>
+  
+    <app-analysis-results *ngIf="analysisId" [analysisId]="analysisId"></app-analysis-results>
+  
+    <svg id="analysisGraph" width="960" height="600"></svg>
+  
+    <app-language-selector (languageSelected)="onLanguageSelected($event)"></app-language-selector> 
+  
+    <app-complexity-metrics [metrics]="complexityMetrics"></app-complexity-metrics>
+  
+    <app-code-viewer [code]="selectedCode" [language]="selectedLanguage"></app-code-viewer>
+  </div> -->
